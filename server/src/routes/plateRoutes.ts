@@ -10,10 +10,9 @@ const upload = multer(MULTER);
 
 plateRoutes.get("/plates", authMiddleware, plateControllers.read);
 
-plateRoutes.use(authMiddleware, isAdmin);
-plateRoutes.post("/plates", upload.single("image"), plateControllers.create);
-plateRoutes.put("/plates/:id", upload.single("image"), plateControllers.update);
-plateRoutes.delete("/plates/:id", plateControllers.delete);
-plateRoutes.patch("/plates/image/:id", upload.single("image"), plateControllers.patch);
+plateRoutes.post("/plates", authMiddleware, isAdmin, upload.single("image"), plateControllers.create);
+plateRoutes.put("/plates/:id", authMiddleware, isAdmin, upload.single("image"), plateControllers.update);
+plateRoutes.delete("/plates/:id", authMiddleware, isAdmin, plateControllers.delete);
+plateRoutes.patch("/plates/image/:id", authMiddleware, isAdmin, upload.single("image"), plateControllers.patch);
 
 export { plateRoutes };
