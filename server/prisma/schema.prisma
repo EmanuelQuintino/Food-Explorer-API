@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator erd {
+  provider = "prisma-erd-generator"
+  output   = "./ERD.svg"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id         String   @id @default(uuid())
+  name       String
+  email      String   @unique
+  password   String
+  is_admin   Boolean?
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  orders    Orders[]
+  favorites Favorites[]
+
+  @@map("users")
+}
+
+model Orders {
+  id         String   @id @default(uuid())
+  status     String   @default("Pendente")
+  code       Int      @unique
+  user_id   String
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  user Users @relation(fields: [user_id], references: [id])
+
+  order_plates OrderPlates[]
+
+  @@map("orders")
+}
+
+model Plates {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  price       Decimal
+  category    String
+  image       String?
+  created_at  DateTime @default(now())
+  updated_at  DateTime @default(now()) @updatedAt
+
+  order_plates OrderPlates[]
+  ingredients  Ingredients[]
+  favorites    Favorites[]
+
+  @@map("plates")
+}
+
+model OrderPlates {
+  order_id   String
+  plate_id   String
+  amount     Int      @default(1)
+  price      Decimal
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  order Orders @relation(fields: [order_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  plate Plates @relation(fields: [plate_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+
+  @@id([order_id, plate_id])
+  @@map("order_plates")
+}
+
+model Ingredients {
+  id         String   @id @default(uuid())
+  name       String
+  plate_id   String
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  plate Plates @relation(fields: [plate_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+
+  @@map("ingredients")
+}
+
+model Favorites {
+  user_id    String
+  plate_id   String
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now()) @updatedAt
+
+  user  Users  @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  plate Plates @relation(fields: [plate_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+
+  @@id([user_id, plate_id])
+  @@map("favorites")
+}
