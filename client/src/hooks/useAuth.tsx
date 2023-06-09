@@ -36,7 +36,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
           setUserAuth(userDecodedToken);
         }
       })
-      .catch((error) => toast.error(error.response.data.error));
+      .catch((error) => toast.error(error.response.data.error || "Erro na autenticação do usuário"));
   };
 
   function handleLogout() {
