@@ -4,7 +4,9 @@ import { authMiddleware } from "../middlewares/auth";
 
 const favoritesRoutes = Router();
 
-favoritesRoutes.post("/favorites/:plateID", authMiddleware, favoritesControllers.create);
-favoritesRoutes.delete("/favorites/:plateID", authMiddleware, favoritesControllers.delete);
+favoritesRoutes.use(authMiddleware);
+
+favoritesRoutes.post("/favorites/:plateID", favoritesControllers.create);
+favoritesRoutes.delete("/favorites/:plateID", favoritesControllers.delete);
 
 export { favoritesRoutes };

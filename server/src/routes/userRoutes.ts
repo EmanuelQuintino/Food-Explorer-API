@@ -6,9 +6,12 @@ import { isAdmin } from "../middlewares/isAdmin";
 const userRoutes = Router();
 
 userRoutes.post("/users", userControllers.create);
-userRoutes.get("/users/index", authMiddleware, isAdmin, userControllers.index);
-userRoutes.get("/users", authMiddleware, userControllers.read);
-userRoutes.put("/users", authMiddleware, userControllers.update);
-userRoutes.delete("/users", authMiddleware, userControllers.delete);
+
+userRoutes.use(authMiddleware);
+
+userRoutes.get("/users/index", isAdmin, userControllers.index);
+userRoutes.get("/users", userControllers.read);
+userRoutes.put("/users", userControllers.update);
+userRoutes.delete("/users", userControllers.delete);
 
 export { userRoutes };
