@@ -16,10 +16,10 @@ app.use(cors());
 app.use("/images", express.static(UPLOADS_FOLDER));
 dotenv.config();
 
+app.use(routes);
+
 app.use(pageNotFoundError);
 app.use(appError);
-
-app.use(routes);
 
 prisma.$connect()
   .then(() => console.log("Database is connected.."))
