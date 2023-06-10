@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run build:typescript && vite build",
+    "build:typescript": "tsc",
     "preview": "vite preview"
   },
   "dependencies": {
