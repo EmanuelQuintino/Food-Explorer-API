@@ -71,7 +71,10 @@ export const plateControllers = {
 
         return res.status(200).json(plate);
       } else {
-        const plates = await prisma.plates.findMany({ include: { ingredients: true } });
+        const plates = await prisma.plates.findMany({
+          include: { ingredients: true },
+          orderBy: { created_at: "asc" }
+        });
         return res.status(200).json(plates);
       };
     } catch (error: any) {
