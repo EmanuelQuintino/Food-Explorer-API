@@ -17,13 +17,13 @@ $ git clone https://github.com/EmanuelQuintino/Food-Explorer-API.git
 # Install dependencies
 $ npm install
 
-# Install prisma client
+# Install Prisma Client
 $ npm install @prisma/client
 
-# Run prisma migrations
+# Run Prisma Migrations
 $ npx prisma migrate dev
 
-# Run prisma seeds
+# Run Prisma Seeds
 $ npx prisma db seed
 
 # Run API
@@ -31,7 +31,7 @@ $ npm run dev
 ```
 ## Attention
 
-#### Fill environment variables
+#### Fill it up Environment Variables
 
 ```ini
 DATABASE_URL=""
