@@ -1,10 +1,8 @@
 # Food Explorer API
 
 ## Description
--
---
 ---
-----
+
 ## Technologies
 - `Node.js`
 - `Typescript`
@@ -35,7 +33,7 @@ $ npx prisma db seed
 # Run API
 $ npm run dev
 ```
-## Useful Links
+## Links
 
 - [Deploy](https://project-food-explorer.netlify.app/)
-- [Repositório do Client-Side](https://github.com/EmanuelQuintino/Food-Explorer)
+- [Client-Side Repository](https://github.com/EmanuelQuintino/Food-Explorer)
