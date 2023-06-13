@@ -8,7 +8,7 @@
 - `Bcrypt`
 - `Multer`
 
-## Installation API
+## Installation
 
 ```bash
 # Clone project
