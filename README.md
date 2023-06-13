@@ -1,11 +1,10 @@
 # Food Explorer API
 
 ## Description
----- test
---- test
--- Test
-- test
-
+-
+--
+---
+----
 ## Technologies
 - `Node.js`
 - `Typescript`
