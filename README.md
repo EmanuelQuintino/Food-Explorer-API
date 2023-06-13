@@ -1,7 +1,7 @@
 # Food Explorer API
 
 ## Description
----
+
 
 ## Technologies
 - `Node.js`
@@ -15,23 +15,34 @@
 ## Installation API
 
 ```bash
-# Clone Project
+# Clone project
 $ git clone https://github.com/EmanuelQuintino/Food-Explorer-API.git
 
-# Install Dependencies
+# Install dependencies
 $ npm install
 
-# Install Prisma Client
+# Install prisma client
 $ npm install @prisma/client
 
-# Run prisma migrations:
+# Run prisma migrations
 $ npx prisma migrate dev
 
-# Run prisma seed:
+# Run prisma seeds
 $ npx prisma db seed
 
 # Run API
 $ npm run dev
+```
+## Attention
+
+- Fill environment variables
+
+```
+DATABASE_URL=""
+SECRET_TOKEN=""
+EXPIRESIN_TOKEN=""
+ADMIN_EMAIL=""
+ADMIN_PASSWORD=""
 ```
 ## Links
 
