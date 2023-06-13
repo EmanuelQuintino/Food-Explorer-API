@@ -1,8 +1,4 @@
 # Food Explorer API
-
-## Description
-
-
 ## Technologies
 - `Node.js`
 - `Typescript`
@@ -35,15 +31,16 @@ $ npm run dev
 ```
 ## Attention
 
-- Fill environment variables
+#### Fill environment variables
 
-```
+```ini
 DATABASE_URL=""
 SECRET_TOKEN=""
 EXPIRESIN_TOKEN=""
 ADMIN_EMAIL=""
 ADMIN_PASSWORD=""
 ```
+
 ## Links
 
 - [Deploy](https://project-food-explorer.netlify.app/)
