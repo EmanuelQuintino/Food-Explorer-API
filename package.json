@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsup src",
-    "start": "node dist/server.js"
+    "start": "pm2-runtime start ecosystem.config.js --env production"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,7 @@
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^9.0.0",
     "multer": "^1.4.5-lts.1",
+    "pm2": "^5.3.0",
     "tsup": "^6.7.0",
     "tsx": "^3.12.6",
     "zod": "^3.21.4"
