@@ -1,11 +1,8 @@
 {
-  "name": "server",
+  "name": "food-explorer-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": {
-    "node": "18"
-  },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
   },
@@ -14,8 +11,13 @@
     "build": "tsup src",
     "start": "pm2-runtime start ecosystem.config.js --env production"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "node.js",
+    "typescript",
+    "express",
+    "JWT"
+  ],
+  "author": "João Emanuel Vieira Quintino",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^4.14.1",
