@@ -2,7 +2,7 @@ module.exports = {
   apps: [{
     name: "food-explorer-api",
     script: "dist/server.js",
-    instances: "max",
+    instances: 1,
     env: {
       NODE_ENV: "development",
     },
