@@ -8,18 +8,20 @@ import dotenv from 'dotenv';
 import { UPLOADS_FOLDER } from "./configs/upload";
 import cors from "cors";
 
-const app = express();
-app.listen(3000, () => console.log("Server is running on port 3000"));
+dotenv.config();
+const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
+const app = express();
+
 app.use(cors());
+app.use(express.json());
 app.use("/images", express.static(UPLOADS_FOLDER));
 app.use(routes);
 
-dotenv.config();
-
 app.use(pageNotFoundError);
 app.use(appError);
+
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 
 prisma.$connect()
   .then(() => console.log("Database is connected..."))
