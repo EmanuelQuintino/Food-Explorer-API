@@ -33,16 +33,14 @@ $ npx prisma db seed
 # Run API
 $ npm run dev
 ```
-## Attention
-
-#### Fill it up Environment Variables
+## Environment Variables
 
 ```ini
 DATABASE_URL=""
 SECRET_TOKEN=""
 EXPIRESIN_TOKEN=""
-ADMIN_EMAIL=""
-ADMIN_PASSWORD=""
+ADMIN_EMAIL="admin@system.com"
+ADMIN_PASSWORD="admin@system"
 ```
 
 ## Links
