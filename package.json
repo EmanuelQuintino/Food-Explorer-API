@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsup src",
-    "start": "pm2-runtime start ecosystem.config.js --env production --watch"
+    "start": "pm2-runtime start ecosystem.config.js --env production"
   },
   "keywords": [
     "node.js",
