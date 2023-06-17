@@ -1,7 +1,7 @@
 # Food Explorer API
 
 ## Entity Relationship Diagram
-![ERD](./tmp/ERD-Food-Explorer.png)
+![ERD](./tmp/drawSQL-food-explorer.png)
 
 ## Technologies
 - `Node.js`
