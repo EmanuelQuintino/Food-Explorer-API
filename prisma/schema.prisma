@@ -35,7 +35,7 @@ model Orders {
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt
 
-  user Users @relation(fields: [user_id], references: [id])
+  user Users @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
 
   order_plates OrderPlates[]
 
