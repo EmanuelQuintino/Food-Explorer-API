@@ -1,9 +1,11 @@
 # Food Explorer API
 
 ## Entity Relationship Diagram
+
 ![ERD](./tmp/drawSQL-food-explorer.png)
 
 ## Technologies
+
 - `Node.js`
 - `Typescript`
 - `Express`
@@ -33,6 +35,7 @@ $ npx prisma db seed
 # Run API
 $ npm run dev
 ```
+
 ## Environment Variables
 
 ```ini
