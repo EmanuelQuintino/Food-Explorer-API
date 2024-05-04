@@ -98,7 +98,7 @@ export const orderControllers = {
           where: {
             OR: [
               { code: { equals: Number(search) || undefined } },
-              { status: { contains: String(search) || undefined, mode: 'insensitive' } },
+              { status: { contains: String(search) || undefined } },
             ],
           },
         });
@@ -146,7 +146,7 @@ export const orderControllers = {
               user_id: userID,
               OR: [
                 { code: { equals: Number(search) || undefined } },
-                { status: { contains: String(search) || undefined, mode: 'insensitive' } },
+                { status: { contains: String(search) || undefined } },
               ],
             },
           });
