@@ -49,4 +49,4 @@ ADMIN_PASSWORD="admin@system"
 ## Links
 
 - [Deploy](https://project-food-explorer.netlify.app/)
-- [Client-Side Repository](https://github.com/EmanuelQuintino/Food-Explorer)
+- [Front Repository](https://github.com/EmanuelQuintino/Food-Explorer)
