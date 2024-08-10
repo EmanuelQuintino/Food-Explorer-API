@@ -2,7 +2,7 @@
 
 ## Entity Relationship Diagram
 
-![ERD](./tmp/drawSQL-food-explorer.png)
+![ERD](./erd/drawSQL-food-explorer.png)
 
 ## Technologies
 
